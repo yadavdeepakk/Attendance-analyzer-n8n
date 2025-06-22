@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "./Card";
 import { Button } from "./Button";
 import {
@@ -157,9 +157,30 @@ export default function AttendanceDashboard({ theme }) {
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Refresh Data
             </Button>
-            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              Send Emails
-            </Button>
+
+              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-2xl "
+                onClick={async () => {
+                  try {
+                    const response = await fetch(
+                      "https://yadavdeepakk.app.n8n.cloud/webhook-test/send-emails",
+                      {
+                        method: "POST",
+                      }
+                    );
+                    if (response.ok) {
+                      alert("Emails sent to absentees!");
+                    } else {
+                      alert("Failed to send emails.");
+                    }
+                  } catch (error) {
+                    console.error(error);
+                    alert("Error connecting to server.");
+                  }
+                }}
+              >
+                Send Emails
+              </button>
+           
             <Button className="bg-yellow-400 hover:bg-yellow-500 text-black">
               Download Report
             </Button>
