@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import AttendanceDashboard from "./components/AttendanceDashboard";
+import AttendanceTable from "./components/AttendanceTable";
 import "./index.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         Toggle {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
       </button>
       <AttendanceDashboard theme={theme} />
+      <AttendanceTable/>
     </div>
   );
 }
