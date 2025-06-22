@@ -29,7 +29,7 @@ const AttendanceTable = () => {
         <thead className="bg-[#00bda6] text-white">
           <tr>
             <th className="px-4 py-2 border">Name</th>
-            <th className="px-4 py-2 border">Email</th>
+            {/* <th className="px-4 py-2 border">Email</th> */}
             <th className="px-4 py-2 border">Check-in Time</th>
             <th className="px-4 py-2 border">Date</th>
             <th className="px-4 py-2 border">Status</th>
@@ -39,7 +39,7 @@ const AttendanceTable = () => {
           {rows.map((row, idx) => (
             <tr key={idx} className="even:bg-gray-100">
               <td className="px-4 py-2 border">{row.Name}</td>
-              <td className="px-4 py-2 border">{row.Email}</td>
+              {/* <td className="px-4 py-2 border">{row.Email}</td> */}
               <td className="px-4 py-2 border">{row["Check-in Time"]}</td>
               <td className="px-4 py-2 border">{row.Date}</td>
               <td

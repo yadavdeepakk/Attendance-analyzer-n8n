@@ -154,15 +154,15 @@ export default function AttendanceDashboard({ theme }) {
         <div className={`${cardBase} rounded-2xl shadow p-6`}>
           <h2 className="text-lg font-semibold mb-2">⚡ Quick Actions</h2>
           <div className="flex flex-wrap gap-3 mt-4">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
               Refresh Data
             </Button>
 
-              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-2xl "
+              <button className="bg-emerald-600 cursor-pointer hover:bg-emerald-700 text-white px-4 py-3 rounded-2xl "
                 onClick={async () => {
                   try {
                     const response = await fetch(
-                      "https://yadavdeepakk.app.n8n.cloud/webhook-test/send-emails",
+                      "https://yadavdeepakk.app.n8n.cloud/webhook-test/email-sending",
                       {
                         method: "POST",
                       }
@@ -181,12 +181,12 @@ export default function AttendanceDashboard({ theme }) {
                 Send Emails
               </button>
            
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black">
+            <Button className="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-black">
               Download Report
             </Button>
-            <Button className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">
+            {/* <Button className="bg-fuchsia-600 cursor-pointer hover:bg-fuchsia-700 text-white">
               Flag Repeats
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
